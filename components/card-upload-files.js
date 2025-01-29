@@ -16,10 +16,11 @@ class CardUploadFiles extends HTMLElement {
               alt="Imagen decorativa del contenedor de arrastrar y soltar"
             />
             <div class="text-container">
-              <p>Arrastre los archivos aquí para cargarlos</p>
+              <p class="dragText">Arrastre los archivos aquí para cargarlos</p>
               <p>También puede seleccionar un archivo mediante:</p>
-              <p><strong>Haga clic aquí</strong></p>
+              <p class="click-archiver"><strong>Haga clic aquí</strong></p>
             </div>
+            <input type="file" id="input-file" accept="image" title="Selecciona cualquier imagen">
           </div>
           <div class="central-buttons">
             <button>Cancelar</button>

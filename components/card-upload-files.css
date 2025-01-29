@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: solid 2px #000;
+    border: solid 2px #999;
     height: 200px;
     border-style: dashed;
     border-radius: 1cqmax;
@@ -27,6 +27,12 @@
   .central-draw-and-drop img {
     width: 50px;
     height: auto;
+  }
+
+  .active{
+    border-color: #d47eff;
+    transition: linear 0.2s;
+
   }
 
   .text-container {
@@ -48,6 +54,11 @@
   .text-container strong {
     color: #9e2cd7;
     font-weight: bold;
+  }
+
+  .text-container strong:hover {
+    color: #8e26c2;
+    cursor: pointer;
   }
 
   .central-title {
@@ -75,7 +86,24 @@
     border: solid 2px #666;
   }
 
+  .central-buttons button:first-child:hover {
+    background-color: #fff;
+    border: solid 2px #000;
+    transition: linear 0.2s;
+    translate: 0 -5px;
+  }
+
   .central-buttons button:last-child {
     background-color: #9e2cd7;
     color: #fff;
+  }
+
+  .central-buttons button:last-child:hover {
+    transition: linear 0.2s;
+    translate: 0 -5px;
+    background-color: #8e26c2;
+  }
+
+  #input-file{
+    display: none;
   }
