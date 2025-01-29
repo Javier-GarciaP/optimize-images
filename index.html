@@ -1,17 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Optimize Image</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./components/card-upload-files.css">
+    <script src="./components/card-upload-files.js"></script>
+    <script type="module" src="./utils/main.js"></script>
+  </head>
+  <body>
     <header class="header">
-        <a href="./index.html" class="header__logo">
-            <img class="header__img" src="./assets/img/Logo.svg" alt="Logo">
-            <h1 class="header__title">Optimize Image</h1>
-        </a>
+      <a href="./index.html" class="header__logo">
+        <img class="header__img" src="./assets/img/Logo.svg" alt="Logo" />
+        <h1 class="header__title">Optimize Image</h1>
+      </a>
     </header>
-</body>
+    <main>
+      <card-upload-files></card-upload-files>
+    </main>
+  </body>
 </html>

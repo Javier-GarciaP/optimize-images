@@ -1,25 +1,25 @@
 @font-face {
-    font-family: 'Poppins Thin';
-    src: url('./assets/fonts/Poppins-Thin.woff2') format('woff2');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins Thin';
+  src: url('./assets/fonts/Poppins-Thin.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins Regular';
-    src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins Regular';
+  src: url('./assets/fonts/Poppins-Regular.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Poppins Bold';
-    src: url('./assets/fonts/Poppins-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: 'Poppins Bold';
+  src: url('./assets/fonts/Poppins-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
 
@@ -37,32 +37,37 @@
 @media (prefers-reduced-motion: reduce) {
   * {
     -webkit-animation: none !important;
-            animation: none !important;
+    animation: none !important;
     -webkit-transition: none !important;
     transition: none !important;
   }
 }
+
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * {
   margin: 0;
   padding: 0;
   border: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   vertical-align: baseline;
 }
 
 /* Evitamos problemas con las imagenes */
-img, picture, video, iframe, figure {
+img,
+picture,
+video,
+iframe,
+figure {
   max-width: 100%;
   width: 100%;
   display: block;
   /* opcional */
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* opcional */
   -o-object-position: center center;
-     object-position: center center;
+  object-position: center center;
 }
 
 /* Reseteamos los enlaces para funcionar como cajas... */
@@ -89,7 +94,21 @@ html {
 }
 
 /* Desactivamos estilos por defecto de las principales etiquetas de texto */
-h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+strong,
+blockquote,
+i,
+b,
+u,
+em {
   font-size: 1em;
   font-weight: inherit;
   font-style: inherit;
@@ -98,7 +117,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em {
 }
 
 /* Evitamos problemas con los pseudoelementos de quotes */
-blockquote:before, blockquote:after, q:before, q:after {
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
   content: "";
   content: none;
 }
@@ -108,29 +130,37 @@ blockquote:before, blockquote:after, q:before, q:after {
   background-color: var(--negro);
   color: var(--blanco);
 }
+
 ::selection {
   background-color: var(--negro);
   color: var(--blanco);
 }
 
 /* Nivelamos problemas de tipografías y colocación de formularios */
-form, input, textarea, select, button, label {
+form,
+input,
+textarea,
+select,
+button,
+label {
   font-family: inherit;
   font-size: inherit;
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   background-color: transparent;
   color: inherit;
   display: block;
   /* opcional */
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 /* Reseteamos las tablas */
-table, tr, td {
+table,
+tr,
+td {
   border-collapse: collapse;
   border-spacing: 0;
 }
@@ -157,39 +187,46 @@ body {
   line-height: 1.4em;
   /* opcional */
   -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
   /* opcional */
   font-smooth: always;
   /* opcional */
   -webkit-font-smoothing: antialiased;
   /* opcional */
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  width: 100%;
+  flex-grow: 1;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    width: 100%;
-    background-color: #ebebeb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: #ebebeb;
 }
 
 .header__logo {
-    display: flex;
-    justify-content: center;    
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header__img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
 }
 
 .header__title {
-    font-family: 'Poppins Bold';
-    font-weight: 700;
-    font-size: 30px;
+  font-family: 'Poppins Bold';
+  font-weight: 700;
+  font-size: 30px;
 }
