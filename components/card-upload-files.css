@@ -107,3 +107,16 @@
   #input-file{
     display: none;
   }
+
+  #imgPreview {
+    display: none;
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: 100px;
+    max-height: auto;
+    background-color: #bb6262;
+    margin: 0 auto;
+    padding: 0;
+    display: block;
+}

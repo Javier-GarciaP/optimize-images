@@ -26,7 +26,8 @@ class CardUploadFiles extends HTMLElement {
             <button>Cancelar</button>
             <button>Subir Archivos</button>
           </div>
-        </div>
+          </div>
+          <img class="imgPreview" id="imgPreview" alt="Vista previa de la imagen"/>
       </section>
         `;
   }

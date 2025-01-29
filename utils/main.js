@@ -6,6 +6,7 @@
   - Habilita la funcionalidad de arrastrar y soltar imágenes.
   - Valida que los archivos sean de formato imagen (JPEG, PNG, GIF, etc.).
   - Guarda las imágenes en localStorage en formato Base64.
+  - Muestra la imagen cargada en la UI.
 */
 
 // Selección de elementos del DOM
@@ -13,6 +14,11 @@ const clickArchiver = document.querySelector(".click-archiver"); // Botón para 
 const input = document.querySelector("#input-file"); // Input oculto de tipo file
 const containerDrag = document.querySelector(".central-draw-and-drop"); // Contenedor de arrastrar y soltar
 const dragText = document.querySelector(".dragText"); // Texto dentro del área de arrastrar y soltar
+
+// Crear un elemento img para mostrar la imagen cargada
+const imgPreview = document.createElement('img');
+imgPreview.id = 'imgPreview';
+document.body.appendChild(imgPreview);
 
 // Evento para abrir el selector de archivos cuando se hace clic en el botón
 document.querySelector(".click-archiver").addEventListener("click", () => {
@@ -62,6 +68,10 @@ function leerArchivos(files) {
       fileReader.addEventListener("load", (e) => {
         const fileResult = e.target.result; // Contenido del archivo en formato Base64
 
+        // Mostrar la imagen en la UI
+        imgPreview.src = fileResult;
+        imgPreview.style.display = "flex";
+
         // Guardar la imagen en localStorage
         let imagenesGuardadas = JSON.parse(localStorage.getItem("imagenes")) || [];
         imagenesGuardadas.push(fileResult);
@@ -74,3 +84,5 @@ function leerArchivos(files) {
     }
   });
 }
+// imgPreview.style.width = "100px";
+// imgPreview.style.height = "100px";
