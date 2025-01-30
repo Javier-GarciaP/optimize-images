@@ -6,7 +6,7 @@ class CardUploadFiles extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
         <section class="draw-and-drop">
-        <div class="central-container">
+          <div class="central-container">
           <h2 class="central-title">Haga clic aquí</h2>
 
           <p>Adjunte el siguiente archivo</p>
@@ -20,14 +20,15 @@ class CardUploadFiles extends HTMLElement {
               <p>También puede seleccionar un archivo mediante:</p>
               <p class="click-archiver"><strong>Haga clic aquí</strong></p>
             </div>
-            <input type="file" id="input-file" accept="image" title="Selecciona cualquier imagen">
+            <input type="file" id="input-file" accept="image" title="Selecciona cualquier imagen" multiple>
           </div>
           <div class="central-buttons">
             <button>Cancelar</button>
             <button>Subir Archivos</button>
           </div>
           </div>
-          <img class="imgPreview" id="imgPreview" alt="Vista previa de la imagen"/>
+          <div id="image-preview-container">
+          </div>
       </section>
         `;
   }

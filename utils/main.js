@@ -1,27 +1,12 @@
-/*
-  Script para la gestión de subida de imágenes mediante input y drag & drop.
-  
-  Funcionalidades:
-  - Permite seleccionar una imagen desde el sistema de archivos.
-  - Habilita la funcionalidad de arrastrar y soltar imágenes.
-  - Valida que los archivos sean de formato imagen (JPEG, PNG, GIF, etc.).
-  - Guarda las imágenes en localStorage en formato Base64.
-  - Muestra la imagen cargada en la UI.
-*/
-
 // Selección de elementos del DOM
 const clickArchiver = document.querySelector(".click-archiver"); // Botón para abrir el selector de archivos
 const input = document.querySelector("#input-file"); // Input oculto de tipo file
 const containerDrag = document.querySelector(".central-draw-and-drop"); // Contenedor de arrastrar y soltar
 const dragText = document.querySelector(".dragText"); // Texto dentro del área de arrastrar y soltar
-
-// Crear un elemento img para mostrar la imagen cargada
-const imgPreview = document.createElement('img');
-imgPreview.id = 'imgPreview';
-document.body.appendChild(imgPreview);
+const imagePreviewContainer = document.querySelector("#image-preview-container"); // Contenedor para la vista previa de las imágenes
 
 // Evento para abrir el selector de archivos cuando se hace clic en el botón
-document.querySelector(".click-archiver").addEventListener("click", () => {
+clickArchiver.addEventListener("click", () => {
   input.click();
 });
 
@@ -43,6 +28,10 @@ containerDrag.addEventListener("dragleave", (e) => {
 containerDrag.addEventListener("drop", (e) => {
   e.preventDefault();
   const files = e.dataTransfer.files; // Obtiene los archivos arrastrados
+  if (files.length + imagePreviewContainer.children.length > 5) {
+    alert("No puedes subir más de 5 imágenes.");
+    return;
+  }
   leerArchivos(files); // Procesa los archivos
   containerDrag.classList.remove("active"); // Quita la clase activa
   dragText.textContent = "Arrastra y suelta la imagen"; // Restaura el texto original
@@ -51,6 +40,10 @@ containerDrag.addEventListener("drop", (e) => {
 // Evento cuando el usuario selecciona un archivo desde el input
 input.addEventListener("change", (e) => {
   const files = e.target.files; // Obtiene los archivos seleccionados
+  if (files.length + imagePreviewContainer.children.length > 5) {
+    alert("No puedes subir más de 5 imágenes.");
+    return;
+  }
   leerArchivos(files); // Procesa los archivos
 });
 
@@ -64,13 +57,18 @@ function leerArchivos(files) {
   Array.from(files).forEach(file => {
     if (formatosValidos.includes(file.type)) {
       const fileReader = new FileReader(); // Instancia un lector de archivos
-      
+
       fileReader.addEventListener("load", (e) => {
         const fileResult = e.target.result; // Contenido del archivo en formato Base64
 
-        // Mostrar la imagen en la UI
+        // Crear un elemento img para mostrar la imagen cargada
+        const imgPreview = document.createElement('img');
         imgPreview.src = fileResult;
-        imgPreview.style.display = "flex";
+        imgPreview.style.maxWidth = "200px"; // Ajusta el tamaño de la imagen
+        imgPreview.style.margin = "10px"; // Añade un margen entre las imágenes
+
+        // Añadir la imagen al contenedor de vista previa
+        imagePreviewContainer.appendChild(imgPreview);
 
         // Guardar la imagen en localStorage
         let imagenesGuardadas = JSON.parse(localStorage.getItem("imagenes")) || [];
@@ -84,5 +82,3 @@ function leerArchivos(files) {
     }
   });
 }
-// imgPreview.style.width = "100px";
-// imgPreview.style.height = "100px";

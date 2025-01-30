@@ -109,14 +109,18 @@
   }
 
   #imgPreview {
-    display: none;
-    position: relative;
-    top: 0;
-    left: 0;
-    max-width: 100px;
-    max-height: auto;
-    background-color: #bb6262;
-    margin: 0 auto;
-    padding: 0;
     display: block;
-}
+    gap: 10px;
+    width: 100%;
+    height: auto;
+  }
+  #image-preview-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 100%;
+    height: auto;
+    
+  }
